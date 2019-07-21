@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <p>Name: <input type="text" id="nameid"></p>
+      <button>Set the value of the input field</button>
+      <table id ="table1" style="display: none;">
+         <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         <tbody>
+         </tbody>
+      </table>
+   </body>
+   <script>
+   var vid = $("#nameid").val();
+   
+   
+   $("button").click(function(){
+    
+      $.ajax({
+      	url: "/test/data", 
+      
+      	success: function(result){
+      		
+      		var myvar = '  <tr>'+
+	   		    		'    <td>Lois</td>'+
+	   		    		'    <td>Griffin</td>'+
+	   		    		'  </tr>';
+      				    		
+      		 $("#table1").append(myvar);
+      		
+      		 $("#table1").show();		
+            },
+      
+       error: function (exception) {
+       	
+       	alert("error");
+       }
+      
+   
+   
+   });
+   });
+</script>
+</html>
