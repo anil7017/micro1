@@ -15,6 +15,8 @@ public class MicroController {
 	@GetMapping("/test")
 	public String welcome() {
 
+		System.out.println("branch _1");
+		
 		return "index";
 	}
 	
